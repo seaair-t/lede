@@ -55,9 +55,6 @@ jobs:
 
       - name: Generate configuration file
         run: |
-          rm -rf ./.config
-          make clean
-          touch ./.config
           #
           # 在 cat >> .config <<EOF 到 EOF 之间粘贴你的编译配置, 需注意缩进关系
           # 例如:
@@ -72,7 +69,6 @@ jobs:
           #
           # ===============================================================
           #      
-          sed -i 's/^[ \t]*//g' ./.config
           make defconfig
 
       - name: Make download
